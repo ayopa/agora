@@ -1,0 +1,4 @@
+/build/*/*.pkg.tar.xz
+/build/*/pkg/
+/out/
+/work/

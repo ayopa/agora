@@ -1,0 +1,27 @@
+pkgname=ostree-git
+pkgver=2013.7
+pkgrel=1
+pkgdesc="OSTree is a tool for managing bootable, versioned filesystem trees."
+arch=('i686' 'x86_64')
+url="https://wiki.gnome.org/OSTree"
+license=('LGPL')
+depends=()
+makedepends=('git' 'gtk-doc')
+source=("$pkgname"::'https://github.com/GNOME/ostree.git')
+md5sums=('SKIP')
+
+build() {
+  cd ${srcdir}/${pkgname}
+  if [ ! -f Makefile ]; then
+    ./autogen.sh --prefix=/usr \
+        --sbindir=/usr/bin \
+        --sysconfdir=/etc \
+        --with-mkinitcpio
+  fi
+  make
+}
+
+package() {
+  cd ${srcdir}/${pkgname}
+  make DESTDIR="$pkgdir" install
+}

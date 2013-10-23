@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+
+set -e
+set -x
+
+script_path=$(readlink -f $0)
+base_dir=$(dirname $script_path)
+work_dir="$base_dir"/work
+conf_dir="$base_dir"/conf
+repo_dir="$base_dir"/out/repo
+
+. "$conf_dir"/archmk.conf
+
+mkdir -p "$work_dir"
+mkdir -p "$repo_dir"
+
+sudo archmk
+
+cp -f "$conf_dir"/pacman.conf "$work_dir"
+echo -e "\n[$REPO]\nSigLevel = Never\nServer = file://$repo_dir" >> \
+    "$work_dir"/pacman.conf
+
+mkdir -p "$work_dir"/os
+sudo pacstrap -dcC "$work_dir"/pacman.conf "$work_dir"/os \
+    base ostree-git

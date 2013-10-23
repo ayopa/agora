@@ -1,0 +1,3 @@
+[submodule "source/ostree"]
+	path = source/ostree
+	url = https://github.com/dnarvaez/ostree.git
