@@ -5,8 +5,8 @@ pkgdesc="OSTree is a tool for managing bootable, versioned filesystem trees."
 arch=('i686' 'x86_64')
 url="https://wiki.gnome.org/OSTree"
 license=('LGPL')
-depends=('systemd')
-makedepends=('git' 'gtk-doc' 'libsoup')
+depends=('systemd' 'libsoup')
+makedepends=('git' 'gtk-doc')
 source=("$pkgname"::'https://github.com/GNOME/ostree.git')
 md5sums=('SKIP')
 
