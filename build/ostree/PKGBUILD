@@ -6,7 +6,7 @@ arch=('i686' 'x86_64')
 url="https://wiki.gnome.org/OSTree"
 license=('LGPL')
 depends=('systemd')
-makedepends=('git' 'gtk-doc')
+makedepends=('git' 'gtk-doc' 'libsoup')
 source=("$pkgname"::'https://github.com/GNOME/ostree.git')
 md5sums=('SKIP')
 
