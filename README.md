@@ -2,15 +2,14 @@
 
 First of all install eta
 
+    git clone https://github.com/ayopa/eta.git
+    cd eta
     makepkg -i
 
-Then clone the agora repository
+Then build the agora packages
 
     git clone https://github.com/ayopa/agora.git
     cd agora
-
-Build the packages
-
     sudo eta-build
 
 Construct the root filesystem and commit it
