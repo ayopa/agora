@@ -10,6 +10,12 @@ makedepends=('git' 'gtk-doc')
 source=("$pkgname"::'https://github.com/GNOME/ostree.git')
 md5sums=('SKIP')
 
+pkgver() {
+  cd ${srcdir}/${pkgname}
+  local ver="$(git describe --long)"
+  printf "%s" "${ver//-/.}"
+}
+
 build() {
   cd ${srcdir}/${pkgname}
   if [ ! -f Makefile ]; then
