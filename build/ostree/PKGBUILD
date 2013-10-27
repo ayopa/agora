@@ -1,5 +1,5 @@
 pkgname=ostree-git
-pkgver=v2013.7.6.g379db71
+pkgver=v2013.7.7.g61439de
 pkgrel=1
 pkgdesc="OSTree is a tool for managing bootable, versioned filesystem trees."
 arch=('i686' 'x86_64')
